@@ -1,0 +1,33 @@
+void defuseTwoBombs()
+{
+    repeat (2)
+    {
+        defuseOneBomb();
+        turnRight();
+        
+    }
+    turnRight(); // for facing in correct direction
+}
+
+void defuseOneBomb()
+{
+    repeat (10)
+    {
+        if (!onBeeper())
+        {
+            moveForward();
+        } 
+        else
+        {
+            pickBeeper();
+            repeat (2)
+            {
+                turnLeft();
+            }
+            repeat (9)
+            {
+                moveForward();
+            }
+        }
+    }
+}

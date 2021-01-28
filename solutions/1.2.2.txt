@@ -1,0 +1,28 @@
+void fillTheHoles()
+{
+    repeat (8)
+    {
+        fillHole();
+    }
+}    
+
+void fillHole()
+{
+    if (! rightIsClear())
+    {
+        moveForward();
+    }
+    else
+    {
+        turnRight();
+        moveForward();
+        dropBeeper();
+        repeat (2)
+        {
+            turnRight();
+        }
+        moveForward();
+        turnRight();
+        moveForward();
+    }
+}

@@ -1,0 +1,49 @@
+// this is most definitely not the most elegant way, especially the
+// climbFlowerDown() part is too specific to this problem
+void saveTheFlower()
+{
+    moveForward();
+    pickBeeper();
+    repeat (8)
+    {
+        climbFlowerUp();
+    }
+    dropBeeper();
+    climbFlowerDown();
+    repeat (2)
+    {
+        moveForward();
+    }
+    turnLeft();
+}
+
+void climbFlowerUp()
+{
+    if (frontIsClear())
+    {
+        moveForward();
+    }
+    else
+    {
+        turnLeft();
+        repeat (2)
+        {
+            moveForward();
+        }
+        turnRight();
+    }
+}
+
+void climbFlowerDown()
+{
+    moveForward();
+    turnRight();
+    repeat (3)
+    {
+        moveForward();
+        moveForward();
+        turnLeft();
+        moveForward();
+        turnRight();
+    }
+}

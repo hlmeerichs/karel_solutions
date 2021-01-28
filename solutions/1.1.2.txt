@@ -1,0 +1,24 @@
+// there are easier and more efficient solutions out there but
+// I wanted to include if statements
+void defuseOneBomb()
+{
+    repeat (10)
+    {
+        if (!onBeeper())
+        {
+            moveForward();
+        } 
+        else
+        {
+            pickBeeper();
+            repeat (2)
+            {
+                turnLeft();
+            }
+            repeat (9)
+            {
+                moveForward();
+            }
+        }
+    }
+}

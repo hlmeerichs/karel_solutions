@@ -1,0 +1,24 @@
+void practiceHomeRun()
+{
+    repeat (4)
+    {
+        practiceColumnRun();
+    }
+}
+
+void practiceColumnRun()
+{
+    repeat (10)
+    {
+        if (frontIsClear())
+        {
+            moveForward();
+        }
+        else
+        {
+            turnLeft();
+            pickBeeper();
+        }
+    }
+    
+}

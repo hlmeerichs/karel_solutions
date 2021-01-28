@@ -1,0 +1,32 @@
+// not sure if that's optimal at all, feels rather unnecessary long
+void obtainArtifact()
+{
+    turnRight();
+    moveForward();
+    turnLeft();
+    repeat (3)
+    {
+        moveForward();
+    }
+    turnLeft();
+    repeat (2)
+    {
+        if (onBeeper())
+        {
+            pickBeeper();
+            moveForward();
+        }
+        else
+        {
+            moveForward();
+        }
+    }
+    turnLeft();
+    repeat (3)
+    {
+        moveForward();
+    }
+    turnLeft();
+    moveForward();
+    dropBeeper();
+}
