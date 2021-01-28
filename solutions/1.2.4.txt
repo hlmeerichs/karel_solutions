@@ -1,0 +1,16 @@
+// this might be my best solution yet honestly haha
+void mowTheLawn()
+{
+    repeat (46)
+    {
+        if (beeperAhead())
+        {
+            moveForward();
+            pickBeeper();
+        }
+        else
+        {
+            turnLeft();
+        }
+    }
+}

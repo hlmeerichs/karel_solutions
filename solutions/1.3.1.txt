@@ -1,0 +1,47 @@
+void harvestTheField()
+{
+    repeat (3)
+    {
+        harvestTrack();
+    }
+    turnTrack();
+    repeat (2)
+    {
+        repeat (2)
+        {
+            harvestTrack();
+        }
+        turnTrack();        
+    }
+    repeat (2)
+    {
+        harvestTrack();
+        turnTrack();
+    }
+    moveForward();
+    pickBeeper();
+    moveForward();
+    turnLeft();
+    moveForward();
+    pickBeeper();
+}
+
+
+
+
+void harvestTrack()
+{
+    moveForward();
+    pickBeeper();
+    turnRight();
+    moveForward();
+    turnLeft();
+}
+
+void turnTrack()
+{
+    moveForward();
+    pickBeeper();
+    moveForward();
+    turnLeft();
+}
