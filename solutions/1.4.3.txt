@@ -1,0 +1,29 @@
+void walkTheLabyrinth()
+{
+    repeat (341)
+    {
+        if (frontIsClear())
+        {
+            moveForward();
+            if (onBeeper())
+            {
+                pickBeeper();
+                repeat (8)
+                {
+                    turnLeft();
+                }           
+            }
+        }             
+        else
+        {
+            if (rightIsClear())
+            {
+                turnRight();
+            }
+            else
+            {
+                turnLeft();
+            }
+        }
+    }
+}

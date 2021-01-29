@@ -1,0 +1,56 @@
+// uses cleanTheRoom with some easy modifications
+// more optimal solution in 1.3.4b
+void tileTheFloor()
+{
+    repeat (4)
+    {
+        dropOneRow();
+        dropLeftTurn();
+        dropOneRow();
+        dropRightTurn();
+    }
+    dropOneRow();
+    dropLeftTurn();
+    dropOneRow();
+}
+
+
+void dropLeftTurn()
+{
+    turnLeft();
+    moveForward();
+    turnLeft();
+}
+
+void dropRightTurn()
+{
+    turnRight();
+    moveForward();
+    turnRight();
+}
+
+void dropOneRow()
+{
+    repeat (10)
+    {
+        if (frontIsClear())
+        {
+            if (! onBeeper())
+            {
+                dropBeeper();
+                moveForward();
+            }
+            else
+            {
+                moveForward();
+            }
+        }
+        else
+        {
+            if (! onBeeper())
+            {
+                dropBeeper();
+            }
+        }
+    }
+}

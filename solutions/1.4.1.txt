@@ -1,0 +1,32 @@
+void stealOlympicFire()
+{
+    moveForward();
+    repeat (6)
+    {
+        oneStairCase();
+    }
+    pickBeeper();
+    moveForward();
+    turnRight();
+    repeat (7)
+    {
+        if (frontIsClear())
+        {
+            moveForward();
+        }
+        else
+        {
+            turnLeft();
+            moveForward();
+        }
+        
+    }
+}
+
+void oneStairCase()
+{
+    turnLeft();
+    moveForward();
+    turnRight();
+    moveForward();
+}

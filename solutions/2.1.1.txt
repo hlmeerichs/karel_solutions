@@ -1,0 +1,26 @@
+// while statements!
+// this is not my solution, but could not figure it out without 
+// while statements
+void hangTheLampions()
+{
+    while (onBeeper())
+    {
+        pickBeeper();
+        turnLeft();
+        while (frontIsClear())
+        {
+            moveForward();
+        }
+        dropBeeper();
+        turnAround();
+        while(frontIsClear())
+        {
+            moveForward();
+        }
+        turnLeft();
+        if (frontIsClear())
+        {
+            moveForward();
+        }
+    }
+}

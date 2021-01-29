@@ -1,0 +1,25 @@
+// reuse of tileTheFloor()
+void removeTheTiles()
+{
+    pickBeeper();
+    repeat (118)
+    {
+        if (beeperAhead())
+        {
+            if (frontIsClear())
+            {
+                moveForward();
+                pickBeeper();
+            }
+            else
+            {
+                turnLeft();
+            }
+        }
+        
+        else
+        {
+            turnLeft();
+        }
+    }
+}
