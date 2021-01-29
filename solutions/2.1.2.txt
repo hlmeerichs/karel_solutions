@@ -1,0 +1,18 @@
+// while statements
+void followTheSeeds()
+{
+    moveForward();    
+    while (onBeeper())
+    {
+        turnLeft();
+        while (beeperAhead())
+        {
+            pickBeeper();
+            moveForward();
+        }
+        if (! frontIsClear() && ! leftIsClear()) // to end while loop, kind of a workaround
+        {
+            pickBeeper();
+        }
+    }
+}

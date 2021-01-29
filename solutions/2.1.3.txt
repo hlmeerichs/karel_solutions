@@ -1,0 +1,28 @@
+void cleanTheTunnels()
+{
+    turnLeft();
+    repeat (10) // =amount of rows
+    {
+        while (onBeeper())
+        {
+            pickBeeper();        
+        }
+        while (beeperAhead())
+        {
+            moveForward();
+            pickBeeper();
+        }
+        turnAround();
+        while (frontIsClear())
+        {
+            moveForward();
+        }
+        turnLeft();
+        if (frontIsClear())
+        {
+            moveForward();
+            turnLeft();
+        }
+        
+    }
+}
