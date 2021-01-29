@@ -1,5 +1,0 @@
-// binary numbers woa
-void increment()
-{
-    dropBeeper();
-}
