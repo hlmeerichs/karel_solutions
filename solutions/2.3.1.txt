@@ -1,0 +1,50 @@
+// not optimal, but don't want to think more about this one
+void saveTheFlowers()
+{
+    turnLeft();
+    while (! rightIsClear())
+    {
+        moveForward();
+    }
+    repeat (5)
+    {
+        stepUp();
+    }
+    dropBeeper();
+    turnRight();
+    repeat (3)
+    {
+        stepDown();
+    }
+    moveForward();
+    turnRight();
+    while (frontIsClear())
+    {
+        moveForward();
+    }
+}
+
+void stepUp()
+{
+    turnRight();
+    moveForward();
+    if (onBeeper())
+    {
+        pickBeeper();
+    }
+    turnLeft();
+    if (frontIsClear())
+    {
+        moveForward();
+    }
+}
+
+
+void stepDown()
+{
+    moveForward();
+    turnRight();
+    moveForward();
+    dropBeeper();
+    turnLeft();
+}
