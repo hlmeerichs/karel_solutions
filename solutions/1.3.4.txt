@@ -1,5 +1,5 @@
 // uses cleanTheRoom with some easy modifications
-// more optimal solution in 1.3.4b
+// more optimal solution further down
 void tileTheFloor()
 {
     repeat (4)
@@ -51,6 +51,32 @@ void dropOneRow()
             {
                 dropBeeper();
             }
+        }
+    }
+}
+
+// second, clean solution
+void tileTheFloor()
+{
+    dropBeeper();
+    repeat (118)
+    {
+        if (! beeperAhead())
+        {
+            if (frontIsClear())
+            {
+                moveForward();
+                dropBeeper();
+            }
+            else
+            {
+                turnLeft();
+            }
+        }
+        
+        else
+        {
+            turnLeft();
         }
     }
 }

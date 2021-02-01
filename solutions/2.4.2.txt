@@ -1,0 +1,77 @@
+void quantize()
+{
+    while (frontIsClear())
+    {
+        determineBits();
+    }
+    determineBits();
+}
+void determineBits()
+{
+    turnLeft();
+    repeat (5)
+    {
+        moveForward();
+    }
+    if (onBeeper())
+    {
+        tenBits();
+        topTurn();
+    }
+    else
+    {
+        zeroBits();
+    }
+}
+
+void tenBits()
+{
+    while (frontIsClear())
+    {
+        moveForward();
+        if (!onBeeper())
+        {
+            dropBeeper();
+        }
+    }
+}
+
+void zeroBits()
+{
+    turnAround();
+    while (frontIsClear())
+    {
+        if (onBeeper())
+        {
+            pickBeeper();
+            moveForward();
+        }
+        else
+        {
+            moveForward();
+        }
+    }
+    if (onBeeper())
+    {
+        pickBeeper();
+    }
+    turnLeft();
+    if (frontIsClear())
+    {
+        moveForward();
+    }    
+}
+
+void topTurn()
+{
+    turnAround();
+    while (frontIsClear())
+    {
+        moveForward();
+    }
+    turnLeft();
+    if (frontIsClear())
+    {
+        moveForward();
+    }
+}

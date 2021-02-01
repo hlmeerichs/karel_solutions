@@ -1,0 +1,73 @@
+/*
+other options: walk 'into' cellar, return one step
+*/
+
+void partyAgain()
+{
+    while (onBeeper())
+    {
+        pickBeeper();
+        turnLeft();
+        while (frontIsClear())
+        {
+            moveForward();
+        }
+        dropBeeper();
+        turnAround();
+        moveForward();
+        while(frontIsClear() && !onBeeper())
+        {
+            turnLeft();
+            if (beeperAhead())
+            {
+                moveForward();
+                
+            }
+            else
+            {
+                if (frontIsClear())
+                {
+                    turnRight();                   
+                    moveForward();                    
+                }        
+            }
+        }
+    }
+}
+
+/*
+solution of lukasnehrke
+*/
+
+void partyAgain()
+{
+    while (frontIsClear())
+    {
+        column();
+        moveForward();
+    }
+    column();
+}
+
+void column()
+{
+    turnLeft();
+    pickBeeper();
+    walkAndPick();
+    turnLeft();
+}
+
+void walkAndPick()
+{
+    if (frontIsClear())
+    {
+        moveForward();
+        walkAndPick(); //this is a direct (tail) recursion
+        moveForward();
+    }
+    else
+    {
+        dropBeeper();
+        turnAround();
+    }
+}
