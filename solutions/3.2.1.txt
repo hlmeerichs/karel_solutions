@@ -1,4 +1,4 @@
-void partyAgain()
+void secureTheCave()
 {
     while (frontIsClear())
     {
@@ -10,9 +10,9 @@ void partyAgain()
 void partyOnce()
 {
     turnLeft();
-    pickBeeper();
     walk();
-    turnLeft();
+    pick();
+    turnRight();    
     if (frontIsClear())
     {
         moveForward();
@@ -23,13 +23,27 @@ void walk()
 {
     if (frontIsClear())
     {
-        moveForward();
-        walk();
         moveForward();        
+        walk();
     }
     else
     {
-        turnAround();
+        turnAround();        
+    }
+}
+
+void pick()
+{
+    if (onBeeper())
+    {
+        pickBeeper();
+        moveForward();
+        pick();
         dropBeeper();
+        moveForward();              
+    }
+    else 
+    {
+        walk();
     }
 }

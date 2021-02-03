@@ -2,31 +2,34 @@ void fetchTheStars()
 {
     while (frontIsClear())
     {
-        column();
-        moveForward();
+        partyOnce();
     }
-    column();
+    partyOnce();
 }
 
-void column()
+void partyOnce()
 {
     turnLeft();
-    walkAndPick();
-    dropBeeper();
+    walk();
     turnLeft();
-}
+    dropBeeper();
+    if (frontIsClear())
+    {
+        moveForward();
+    }
+}    
 
-void walkAndPick()
+void walk()
 {
     if (frontIsClear())
     {
         moveForward();
-        walkAndPick(); //this is a direct (tail) recursion
-        moveForward();
+        walk();
+        moveForward();        
     }
     else
     {
-        pickBeeper();
         turnAround();
+        pickBeeper();
     }
 }

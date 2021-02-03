@@ -1,0 +1,27 @@
+void layAndRemoveTiles()
+{
+    if (onBeeper())
+    {
+        turnAround();
+    }
+    else 
+    {
+        dropBeeper();
+        if (frontIsClear() && !beeperAhead()) 
+        {
+            moveForward();
+            layAndRemoveTiles();
+            moveForward();
+            pickBeeper();
+        }
+        else
+        {
+            turnLeft();
+            moveForward();
+            layAndRemoveTiles();
+            moveForward();
+            turnRight();
+            pickBeeper();
+        }
+    }
+}
